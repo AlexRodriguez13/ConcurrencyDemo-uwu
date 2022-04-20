@@ -25,6 +25,12 @@ namespace ConcurrencyDemo
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+
+            if (completed)
+            {
+                completed = false;
+            }
+
             Thread t1= new Thread(new ThreadStart(
                  FillProgressBar
                 ));
@@ -41,15 +47,8 @@ namespace ConcurrencyDemo
                 Thread.Sleep(500);
             }
 
-
-
-
-            //for (int i = 1; i <= 100; i++)
-            //{
-            //    pgbStatus.Value = i;
-                
-
         }
+
         public void RequiredInvoke(int value)
         {
             if (pgbStatus.InvokeRequired)
@@ -66,7 +65,15 @@ namespace ConcurrencyDemo
         public void SetProgressBarValue(int value)
         {
             pgbStatus.Value = value;
+            
 
+
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+           
+            completed = true;
         }
     }
    
