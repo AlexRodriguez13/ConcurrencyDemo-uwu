@@ -75,6 +75,11 @@ namespace ConcurrencyDemo
            
             completed = true;
         }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            pgbStatus.Value = i = 0;
+        }
     }
    
 

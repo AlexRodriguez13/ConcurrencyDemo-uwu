@@ -65,6 +65,7 @@ namespace ConcurrencyDemo
             this.btnStop.TabIndex = 2;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // flowLayoutPanel1
             // 
